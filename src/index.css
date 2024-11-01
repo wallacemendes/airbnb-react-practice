@@ -1,6 +1,13 @@
 body{
   margin: 0;
   font-family: 'Poppins', sans-serif;
+  background-color:#e8e8e870;
+}
+
+main{
+  width: 550px;
+  background-color: #FFFFFF;
+  border-radius: 9px;
 }
 
 .nav-container{
@@ -49,7 +56,7 @@ body{
   position: relative;
   display: flex;
   flex-direction: column;
-  margin: 30px;
+  margin: 10px;
   width: 176px;
   row-gap: 4px;
 }
@@ -109,4 +116,11 @@ color: #222222;
 
 .card--review .stars-note{
   color: #222222;
+}
+
+.cards-roll{
+  display: flex;
+  margin: 20px;
+  margin-right: 0;
+  overflow: scroll;
 }

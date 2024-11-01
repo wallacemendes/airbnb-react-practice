@@ -1,20 +1,27 @@
-import photo from '../assets/image-12.png'
 import star from '../assets/Star1.png'
 
-function Card(){
+function Card({openSpots, imgUrl, starsNote, commentsCount, location, subtitle, price}){
+
+    let badgeText;
+    if (openSpots === 0) {
+        badgeText = "SOLD OUT"
+    } else if (location === "Online") {
+        badgeText = "ONLINE"
+    }
+
     return(
         <div className="card-container">
-            <span className='img-label'>SOLD OUT</span>
-            <img className='card--img' src={photo} />
+            { badgeText && <span className='img-label'>{badgeText}</span>}
+            <img className='card--img' src={imgUrl} />
             <div className="card--review">
                 <img src={star} alt="" />
-                <span className='stars-note'>5.0</span>
-                <span>(6)</span>
-                <span>.</span>
-                <span>USA</span>
+                <span className='stars-note'>{Number(starsNote).toFixed(1)}</span>
+                <span>({commentsCount})</span>
+                <span>•</span>
+                <span>{location}</span>
             </div>
-            <p className="card--subtitle">Life lessons with Katie Zaferes</p>
-            <p className="card--price"><span className='price-value'>From $136</span> / person</p>
+            <p className="card--subtitle">{subtitle}</p>
+            <p className="card--price"><span className='price-value'>From ${price}</span> / person</p>
         </div>
     )
 }
